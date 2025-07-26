@@ -1,0 +1,47 @@
+{
+  "name": "vs-quick-operation",
+  "displayName": "vs-quick-operation",
+  "description": "exCode extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.duplicateLine"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.duplicateLine",
+        "title": "Duplicate Line"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.duplicateLine",
+        "key": "ctrl+shift+d",
+        "when": "editorTextFocus && !editorHasMultipleSelections"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "14.x",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.5",
+    "vscode-test": "^1.5.2"
+  }
+}
