@@ -2,7 +2,9 @@
   "name": "vs-quick-operation",
   "displayName": "vs-quick-operation",
   "description": "exCode extension",
+  "publisher": "liushaolin",
   "version": "0.0.1",
+  "icon": "image/quickly.png",
   "engines": {
     "vscode": "^1.60.0"
   },
