@@ -1,6 +1,6 @@
 const vscode = require("vscode");
 /** 复制和快速黏贴 */
-const copyAndPast = function () {
+const quicklyConsole = function () {
   /**
    * 获取当前活动编辑器
    * 获取当前焦点所在的文本编辑器
@@ -24,7 +24,9 @@ const copyAndPast = function () {
   const selectedText = document.getText(selection);
 
   if (selectedText) {
-    // 如果有选中的文本，复制到下一行
+    // 输出console.log
+
+    const consoleText = `console.log(${selectedText})`;
 
     /** 获取选择区域的结束位置对象，包含  line(行号) 和 character(列号) */
     const endPosition = selection.end;
@@ -36,25 +38,10 @@ const copyAndPast = function () {
       /**在指定位置插入文本  
        * selectedText + "\n" 表示插入选中的文本并在末尾添加换行符
       */
-      editBuilder.insert(insertPosition, selectedText + "\n");
-    });
-  } else {
-    // 如果没有选中文本，复制当前行到下一行
-
-    /** 获取光标当前所在的行号 */
-    const currentLine = selection.active.line;
-    /**获取当前行号所在的行文本 */
-    const lineText = document.lineAt(currentLine).text;
-    /**创建新的位置对象  currentLine + 1 表示在当前行的下一行，0 表示在下一行的第0列 */
-    const insertPosition = new vscode.Position(currentLine + 1, 0);
-
-    editor.edit((editBuilder) => {
-      /**在指定位置插入文本  
-       * lineText + "\n" 表示插入选中的文本并在末尾添加换行符
-      */
-      editBuilder.insert(insertPosition, lineText + "\n");
+      editBuilder.insert(insertPosition, consoleText + "\n");
     });
   }
 }
 
-module.exports = copyAndPast;
+module.exports = quicklyConsole;
+

@@ -3,7 +3,7 @@
   "displayName": "vs-quick-operation",
   "description": "exCode extension",
   "publisher": "liushaolin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "image/quickly.png",
   "engines": {
     "vscode": "^1.60.0"
@@ -12,7 +12,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.duplicateLine"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -20,12 +20,21 @@
       {
         "command": "extension.duplicateLine",
         "title": "Duplicate Line"
+      },
+      {
+        "command": "extension.quicklyConsoleLine",
+        "title": "Console Line"
       }
     ],
     "keybindings": [
       {
         "command": "extension.duplicateLine",
-        "key": "ctrl+shift+d",
+        "key": "ctrl+shift+D",
+        "when": "editorTextFocus && !editorHasMultipleSelections"
+      },
+      {
+        "command": "extension.quicklyConsoleLine",
+        "key": "ctrl+shift+Q",
         "when": "editorTextFocus && !editorHasMultipleSelections"
       }
     ]
