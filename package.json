@@ -1,10 +1,27 @@
 {
   "name": "vs-quick-operation",
   "displayName": "vs-quick-operation",
-  "description": "exCode extension",
+  "description": "一个高效实用的 VS Code 扩展，提供快速复制代码行和智能生成调试语句功能",
   "publisher": "liushaolin",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "icon": "image/quickly.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liushaolin/vs-quick-operation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liushaolin/vs-quick-operation/issues"
+  },
+  "homepage": "https://github.com/liushaolin/vs-quick-operation#readme",
+  "keywords": [
+    "duplicate",
+    "copy",
+    "console",
+    "debug",
+    "快速复制",
+    "调试",
+    "效率工具"
+  ],
   "engines": {
     "vscode": "^1.60.0"
   },
